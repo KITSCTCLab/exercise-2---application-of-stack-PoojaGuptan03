@@ -21,15 +21,16 @@ class Evaluate:
 
 
   def isEmpty(self):
+    
     """
     Check whether the stack is empty.
     Returns:
       True if it is empty, else returns False.
     """
-      if set.top = -1:
-        return True
-      else:
-        return False
+    if set.top = -1:
+      return True
+    else:
+      return False
 
 
   def pop(self):
