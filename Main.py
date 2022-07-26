@@ -70,7 +70,7 @@ class Evaluate:
         operations +=1
     if operations == number - 1:
       return True
-    ele:
+    else:
       return False
 
 
