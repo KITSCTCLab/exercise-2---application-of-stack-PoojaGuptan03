@@ -5,10 +5,8 @@ class Evaluate:
       size_of_stack: An integer which represents the size of stack.
       stack: A List which acts as a Stack.
   """
-    # Write your code here
 
-
-  def __init__(self, size):
+  def _init_(self, size):
     """Inits Evaluate with top, size_of_stack and stack.
     Arguments:
       top:An integer which points to the top most element in the stack.
@@ -21,13 +19,12 @@ class Evaluate:
 
 
   def isEmpty(self):
-    
     """
     Check whether the stack is empty.
     Returns:
       True if it is empty, else returns False.
     """
-    if set.top == -1:
+    if self.top == -1:
       return True
     else:
       return False
@@ -49,7 +46,7 @@ class Evaluate:
     Arguments:
       operand: The operand to be pushed.
     """
-    if self.top!= self.size_of_stack-1:
+    if self.top != self.size_of_stack - 1:
       self.stack.append(operand)
 
 
@@ -61,14 +58,14 @@ class Evaluate:
     Returns:
       True if the expression is valid, else returns False.
     """
-    number = 0
-    operations = 0
-    for el in expression:
-      if el.isnumeric():
-        number+=1
+    n = 0
+    o = 0
+    for element in expression:
+      if element.isnumeric():
+        n = n + 1
       else:
-        operations +=1
-    if operations == number - 1:
+        o = o + 1
+    if o == n - 1:
       return True
     else:
       return False
@@ -86,27 +83,24 @@ class Evaluate:
     for i in expression:
       if i.isnumeric():
         stack.append(int(i))
-      if len(stack)>=2:
-        if i=='+':
+      if len(stack) >= 2:
+        if i == '+':
           stack[-2] = stack[-2] + stack[-1]
           stack.pop()
-        elif i=='-':
+        elif i == '-':
           stack[-2] = stack[-2] - stack[-1]
           stack.pop()
-        elif i=='*':
+        elif i == '*':
           stack[-2] = stack[-2] * stack[-1]
           stack.pop()
-        elif i=='/':
+        elif i == '/':
           stack[-2] = stack[-2] / stack[-1]
           stack.pop()
-        elif i=='^':
-          stack[-2] = stack[-2] ** stack[-1]
+        elif i == '^':
+          stack[-2] = stack[-2] ^ stack[-1]
           stack.pop()
-      return int(stack[-1])
+    return int(stack[-1])
 
-
-
-# Do not change the following code
 postfix_expression = input()  # Read postfix expression
 tokens = postfix_expression.split()
 evaluate = Evaluate(len(tokens))
