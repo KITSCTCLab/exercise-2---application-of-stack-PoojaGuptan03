@@ -27,7 +27,7 @@ class Evaluate:
     Returns:
       True if it is empty, else returns False.
     """
-    if set.top = -1:
+    if set.top == -1:
       return True
     else:
       return False
