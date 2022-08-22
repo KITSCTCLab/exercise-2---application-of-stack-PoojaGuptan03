@@ -35,7 +35,7 @@ class Evaluate:
     """
     Do pop operation if the stack is not empty.
     Returns:
-      The data which is popped out if the stack is not empty.
+      The data which is popped out if the stack is not empty. 
     """
     if not self.isEmpty():
       self.stack.pop()
